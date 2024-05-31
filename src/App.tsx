@@ -5,18 +5,23 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import { AnimatePresence } from 'framer-motion';
+import SiteRevealAnimation from './pages/SiteRevealAnimation';
 
 function App() {
   const location = useLocation();
 
   return (
     <>
-      <Navbar />
+      {location.pathname === '/site-reveal-animation' ? '' : <Navbar />}
       <AnimatePresence mode="wait" key={location.pathname}>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/site-reveal-animation"
+            element={<SiteRevealAnimation />}
+          />
         </Routes>
       </AnimatePresence>
     </>
