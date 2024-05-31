@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Monument-Ultra';
+  src: url('./assets/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Supply mono';
+  src: url('./assets/fonts/Supply-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+#root {
+  --font-monument: 'Monument-Ultra';
+  --font-supply: 'Supply mono';
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #0f0f0f;
+}
+
+html,
+body {
+  font-family: var(--font-monument);
+  background-color: #fff;
+}
+
+a {
+  font-family: var(--font-supply);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 13px;
+}
+
+.nav__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+h1 {
+  width: 80%;
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 900;
+  font-size: 10vw;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+  font-family: var(--font-monument);
+}
+
+.blocks__container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  position: relative;
+  flex: 1;
+  background: #667067;
+  margin: -0.25px;
+}
+
+.transition__in .block {
+  transform-origin: top;
+}
+
+.transition__out .block {
+  transform-origin: bottom;
+}
