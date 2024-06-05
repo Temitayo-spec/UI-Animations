@@ -32,6 +32,7 @@ html,
 body {
   font-family: var(--font-monument);
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -259,4 +260,30 @@ img {
   inset: 0;
   width: 100%;
   height: 100vh;
+}
+
+/* PARALLAX SLIDER STYLINGS */
+.parallax__slider-wrapper {
+  min-height: 100%;
+  width: 100vw;
+  background-color: #0f0f0f;
+  overflow-x: hidden;
+}
+
+#image-track > .image {
+  width: 30vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  max-width: none;
+}
+
+#image-track {
+  display: inline-flex;
+  gap: 4vmin;
+  margin-left: 70%;
+  padding-right: 0%;
+  min-height: 100vh;
+  align-items: center;
 }

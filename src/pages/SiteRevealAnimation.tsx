@@ -138,7 +138,7 @@ const SiteRevealAnimation = () => {
       .add(setInitialStates)
       .add(preloaderAnimation())
       .add(heroImageAnimation(), '-=1.5')
-      .add(UIAnimation(), '<');
+      .add(UIAnimation());
   }, []);
   return (
     <div className="preloader__wrapper">

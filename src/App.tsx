@@ -6,13 +6,19 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import { AnimatePresence } from 'framer-motion';
 import SiteRevealAnimation from './pages/SiteRevealAnimation';
+import ParallaxSlider from './pages/ParallaxSlider';
 
 function App() {
   const location = useLocation();
 
   return (
     <>
-      {location.pathname === '/site-reveal-animation' ? '' : <Navbar />}
+      {location.pathname === '/site-reveal-animation' ||
+      location.pathname === '/parallax-slider' ? (
+        ''
+      ) : (
+        <Navbar />
+      )}
       <AnimatePresence mode="wait" key={location.pathname}>
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
@@ -22,6 +28,7 @@ function App() {
             path="/site-reveal-animation"
             element={<SiteRevealAnimation />}
           />
+          <Route path="/parallax-slider" element={<ParallaxSlider />} />
         </Routes>
       </AnimatePresence>
     </>
